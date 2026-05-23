@@ -298,6 +298,14 @@ function ProductList({ onHomeClick }) {
 
   const [addedToCart, setAddedToCart] = useState({});
 
+  useEffect(() => {
+    const nextAdded = cartItems.reduce((acc, item) => {
+      acc[item.name] = true;
+      return acc;
+    }, {});
+    setAddedToCart(nextAdded);
+  }, [cartItems]);
+
   const handleAddToCart = (plant) => {
     dispatch(addItem(plant));
     setAddedToCart((prev) => ({ ...prev, [plant.name]: true }));
