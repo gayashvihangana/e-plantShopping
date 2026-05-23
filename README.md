@@ -1,4 +1,4 @@
-# e-plantShopping
+# E-Plant Shopping
 
 Repository: e-plantShopping
 
